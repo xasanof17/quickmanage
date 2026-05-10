@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4: dark mode via .dark class ─────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Register CSS vars as Tailwind color utilities ──────────── */
+@theme inline {
+  --color-background:          var(--background);
+  --color-foreground:          var(--foreground);
+  --color-card:                var(--card);
+  --color-card-foreground:     var(--card-foreground);
+  --color-border:              var(--border);
+  --color-muted:               var(--muted);
+  --color-muted-foreground:    var(--muted-foreground);
+  --color-accent:              var(--accent);
+  --color-accent-foreground:   var(--accent-foreground);
+  --color-primary:             var(--primary);
+  --color-primary-foreground:  var(--primary-foreground);
+
+  /* Sidebar tokens */
+  --color-sidebar:             var(--sidebar);
+  --color-sidebar-foreground:  var(--sidebar-foreground);
+  --color-sidebar-border:      var(--sidebar-border);
+  --color-sidebar-muted:       var(--sidebar-muted);
+  --color-sidebar-active:      var(--sidebar-active);
+  --color-sidebar-active-fg:   var(--sidebar-active-fg);
+  --color-sidebar-hover:       var(--sidebar-hover);
+
+  /* Topbar */
+  --color-topbar:              var(--topbar);
+  --color-topbar-foreground:   var(--topbar-foreground);
+  --color-topbar-border:       var(--topbar-border);
+  --color-topbar-muted:        var(--topbar-muted);
+}
+
+/* ── Light theme ────────────────────────────────────────────── */
+:root {
+  --background:         #f5f5f5;
+  --foreground:         #171717;
+  --card:               #ffffff;
+  --card-foreground:    #171717;
+  --border:             #e5e5e5;
+  --muted:              #f5f5f5;
+  --muted-foreground:   #737373;
+  --primary:            #00c896;
+  --primary-foreground: #ffffff;
+  --accent:             #f1f5f9;
+  --accent-foreground:  #0f172a;
+
+  /* Sidebar — light: clean white, scrape.do style */
+  --sidebar:            #ffffff;
+  --sidebar-foreground: #737373;
+  --sidebar-border:     #f0f0f0;
+  --sidebar-muted:      #a3a3a3;
+  --sidebar-active:     #f5f5f5;
+  --sidebar-active-fg:  #171717;
+  --sidebar-hover:      #fafafa;
+
+  /* Topbar — light: white */
+  --topbar:             #ffffff;
+  --topbar-foreground:  #171717;
+  --topbar-border:      #e5e5e5;
+  --topbar-muted:       #a3a3a3;
+
+  --focus-ring: 0 0 0 2px #fff, 0 0 0 4px #00c896;
+  --radius: 0.625rem;
+}
+
+/* ── Dark theme ─────────────────────────────────────────────── */
+.dark {
+  --background:         #0f172a;
+  --foreground:         #f1f5f9;
+  --card:               #1e293b;
+  --card-foreground:    #f1f5f9;
+  --border:             #334155;
+  --muted:              #1e293b;
+  --muted-foreground:   #94a3b8;
+  --primary:            #00c896;
+  --primary-foreground: #ffffff;
+  --accent:             #334155;
+  --accent-foreground:  #f1f5f9;
+
+  /* Sidebar — dark: deeper navy */
+  --sidebar:            #0d1b2a;
+  --sidebar-foreground: #94a3b8;
+  --sidebar-border:     rgba(255,255,255,0.05);
+  --sidebar-muted:      #334155;
+  --sidebar-active:     rgba(255,255,255,0.08);
+  --sidebar-active-fg:  #ffffff;
+  --sidebar-hover:      rgba(255,255,255,0.05);
+
+  /* Topbar */
+  --topbar:             #0d1b2a;
+  --topbar-foreground:  #ffffff;
+  --topbar-border:      rgba(255,255,255,0.05);
+  --topbar-muted:       #475569;
+
+  --focus-ring: 0 0 0 2px #1e293b, 0 0 0 4px #00c896;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Theme transition ───────────────────────────────────────── */
+html, body, main,
+div, section, aside, header, nav, footer,
+a, button, input, span, p, h1, h2, h3, h4, h5, h6, li {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Accessibility ──────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #00c896;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 6px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
