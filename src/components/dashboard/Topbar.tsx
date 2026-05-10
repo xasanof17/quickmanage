@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { LucideIcon } from "lucide-react";
 import {
   Search, Bell, ChevronDown, Wrench, ShieldCheck, AlertTriangle,
   Truck, Package, Archive, List, Menu, Sun, Moon, X,
@@ -8,7 +9,9 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 
-const categories = [
+type Category = { label: string; icon: LucideIcon };
+
+const categories: Category[] = [
   { label: "All",         icon: List },
   { label: "Maintenance", icon: Wrench },
   { label: "Inspections", icon: ShieldCheck },
@@ -148,9 +151,9 @@ export default function Topbar({ company = "DELTA PRIME LLC C/O TRIUMPH", onMenu
 }
 
 function CategoryDropdown({ categories, selected, onSelect }: {
-  categories: typeof import("lucide-react").List extends infer T ? { label: string; icon: React.ElementType }[] : never;
-  selected: { label: string; icon: React.ElementType };
-  onSelect: (c: { label: string; icon: React.ElementType }) => void;
+  categories: Category[];
+  selected: Category;
+  onSelect: (c: Category) => void;
 }) {
   return (
     <ul role="listbox" aria-label="Search categories"
