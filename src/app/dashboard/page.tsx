@@ -2,10 +2,10 @@ import { Truck, DollarSign, Route, TrendingUp, ArrowRight, Flame, X } from "luci
 import Link from "next/link";
 
 const stats = [
-  { label: "Active Loads",     value: "48",       delta: "+4 today",           icon: Route,      color: "text-blue-500",   bg: "bg-blue-50"   },
-  { label: "Active Equipment", value: "371",      delta: "+2 this week",       icon: Truck,      color: "text-emerald-500",bg: "bg-emerald-50"},
-  { label: "Revenue (MTD)",    value: "$124,800", delta: "+12% vs last month", icon: DollarSign, color: "text-violet-500", bg: "bg-violet-50" },
-  { label: "Avg. Rate/Mile",   value: "$3.42",    delta: "-0.08 vs last week", icon: TrendingUp, color: "text-amber-500",  bg: "bg-amber-50"  },
+  { label: "Active Loads",     value: "48",       delta: "+4 today",           icon: Route,      color: "text-blue-500",    bg: "bg-blue-500/10"    },
+  { label: "Active Equipment", value: "371",      delta: "+2 this week",       icon: Truck,      color: "text-emerald-500", bg: "bg-emerald-500/10" },
+  { label: "Revenue (MTD)",    value: "$124,800", delta: "+12% vs last month", icon: DollarSign, color: "text-violet-500",  bg: "bg-violet-500/10"  },
+  { label: "Avg. Rate/Mile",   value: "$3.42",    delta: "-0.08 vs last week", icon: TrendingUp, color: "text-amber-500",   bg: "bg-amber-500/10"   },
 ];
 
 const loads = [
@@ -96,7 +96,7 @@ export default function DashboardPage() {
                 <p className="text-sm font-bold text-primary">{load.rate}</p>
                 <p className="text-xs text-muted-foreground">{load.rpm}</p>
                 {load.hot && (
-                  <span className="inline-flex items-center gap-1 mt-1.5 text-[10px] font-bold bg-orange-100 text-orange-600 px-1.5 py-0.5 rounded">
+                  <span className="inline-flex items-center gap-1 mt-1.5 text-[10px] font-bold bg-orange-500/15 text-orange-500 px-1.5 py-0.5 rounded">
                     <Flame size={9} aria-hidden="true" /> Hot Load
                   </span>
                 )}

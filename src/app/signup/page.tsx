@@ -46,19 +46,19 @@ export default function SignupPage() {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 flex items-center justify-center px-6 py-12 bg-background">
+      <div className="flex-1 flex items-center justify-center px-6 py-12 bg-white">
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
           <div className="flex items-center gap-2 mb-8 lg:hidden">
-            <div className="w-8 h-8 bg-foreground rounded-md flex items-center justify-center">
-              <span className="text-background font-bold text-sm">Q</span>
+            <div className="w-8 h-8 bg-gray-900 rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-sm">Q</span>
             </div>
-            <span className="font-semibold text-lg text-foreground">QuickManage</span>
+            <span className="font-semibold text-lg text-gray-900">QuickManage</span>
           </div>
 
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-foreground">Create an account</h1>
-            <p className="text-muted-foreground mt-1 text-sm">Start your free trial today. No credit card required.</p>
+            <h1 className="text-2xl font-bold text-gray-900">Create an account</h1>
+            <p className="text-gray-500 mt-1 text-sm">Start your free trial today. No credit card required.</p>
           </div>
 
           <form className="space-y-4">
@@ -90,7 +90,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -107,7 +107,7 @@ export default function SignupPage() {
               <div className="w-full border-t border-border" />
             </div>
             <div className="relative flex justify-center text-xs">
-              <span className="bg-background px-2 text-muted-foreground">or sign up with</span>
+              <span className="bg-white px-2 text-gray-400">or sign up with</span>
             </div>
           </div>
 
@@ -133,16 +133,16 @@ export default function SignupPage() {
             Continue with Google
           </Button>
 
-          <p className="text-center text-xs text-muted-foreground mt-6">
+          <p className="text-center text-xs text-gray-400 mt-6">
             By creating an account, you agree to our{" "}
-            <Link href="#" className="text-foreground hover:underline">Terms of Service</Link>{" "}
+            <Link href="#" className="text-gray-900 hover:underline">Terms of Service</Link>{" "}
             and{" "}
-            <Link href="#" className="text-foreground hover:underline">Privacy Policy</Link>.
+            <Link href="#" className="text-gray-900 hover:underline">Privacy Policy</Link>.
           </p>
 
-          <p className="text-center text-sm text-muted-foreground mt-4">
+          <p className="text-center text-sm text-gray-500 mt-4">
             Already have an account?{" "}
-            <Link href="/login" className="text-foreground font-medium hover:underline">
+            <Link href="/login" className="text-gray-900 font-medium hover:underline">
               Sign in
             </Link>
           </p>

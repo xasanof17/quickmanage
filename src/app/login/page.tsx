@@ -15,7 +15,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-slate-900 flex-col justify-between p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-[#0f172a] flex-col justify-between p-12">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
             <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5" aria-hidden="true">
@@ -37,7 +37,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 flex items-center justify-center px-6 py-12 bg-background">
+      <div className="flex-1 flex items-center justify-center px-6 py-12 bg-white">
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
           <div className="flex items-center gap-2 mb-8 lg:hidden">
@@ -47,12 +47,12 @@ export default function LoginPage() {
                 <path d="M10 6L14 10L10 14L6 10Z" fill="white"/>
               </svg>
             </div>
-            <span className="font-bold text-sm text-foreground">quickmanage<span className="text-emerald-500 text-[10px] align-super">.com</span></span>
+            <span className="font-bold text-sm text-gray-900">quickmanage<span className="text-emerald-500 text-[10px] align-super">.com</span></span>
           </div>
 
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-foreground">Welcome back</h1>
-            <p className="text-muted-foreground mt-1 text-sm">Sign in to your account to continue</p>
+            <h1 className="text-2xl font-bold text-gray-900">Welcome back</h1>
+            <p className="text-gray-500 mt-1 text-sm">Sign in to your account to continue</p>
           </div>
 
           {/* Error message */}
@@ -72,7 +72,7 @@ export default function LoginPage() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
-                <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
                   Forgot password?
                 </Link>
               </div>
@@ -90,7 +90,7 @@ export default function LoginPage() {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   aria-label={showPassword ? "Hide password" : "Show password"}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -102,15 +102,15 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          <p className="text-center text-sm text-muted-foreground mt-6">
+          <p className="text-center text-sm text-gray-500 mt-6">
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="text-foreground font-medium hover:underline">
+            <Link href="/signup" className="text-gray-900 font-medium hover:underline">
               Sign up
             </Link>
           </p>
 
           {/* Dev hint */}
-          <p className="text-center text-[11px] text-muted-foreground/50 mt-4">
+          <p className="text-center text-[11px] text-gray-300 mt-4">
             Demo: admin@quickmanage.com / password123
           </p>
         </div>
